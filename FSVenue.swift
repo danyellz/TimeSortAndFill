@@ -17,7 +17,8 @@ final class FSVenue: NSObject {
     // MARK: - Initialization
     
     required init?(dictionary: [String:Any]) {
-        //Check if a dictionary exists from 'venue' key
+        
+        //Check if a dictionary exists from 'venue' object
         guard let dictionaryForVenue = dictionary["venue"] as? [String: Any] else {
             return nil
         }
@@ -27,6 +28,7 @@ final class FSVenue: NSObject {
         open = dictionaryForVenue["openTime"] as! TimeInterval
         close = dictionaryForVenue["closeTime"] as! TimeInterval
         let dictionaryOfVisitors = dictionaryForVenue["visitors"] as! [[String:Any]]
+        //Create array of visitor objects
     }
     
     let id: String
