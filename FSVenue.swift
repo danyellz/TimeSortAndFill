@@ -40,7 +40,7 @@ final class FSVenue: NSObject {
     let visitors: [FSVenueVisitor]?
 }
 
-// MARK: - Private API sorting by time
+// MARK: - Private API for sorting
 
 fileprivate extension FSVenue {
 
