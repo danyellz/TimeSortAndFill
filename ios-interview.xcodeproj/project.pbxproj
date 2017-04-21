@@ -14,6 +14,7 @@
 		59179A111C99DCBF00464D6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59179A0B1C99DCBF00464D6D /* Assets.xcassets */; };
 		59179A121C99DCBF00464D6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59179A0D1C99DCBF00464D6D /* LaunchScreen.storyboard */; };
 		59179A131C99DCBF00464D6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59179A0F1C99DCBF00464D6D /* Main.storyboard */; };
+		ED8F539A1EA9B14A0030BAE3 /* FSJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		59179A0B1C99DCBF00464D6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59179A0E1C99DCBF00464D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59179A101C99DCBF00464D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-interview-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 		4467948E1C2B1B6500642940 = {
 			isa = PBXGroup;
 			children = (
+				ED8F53971EA9B1250030BAE3 /* Utilities  */,
 				2167001F1CA1E7A00019E0D7 /* Data */,
 				590D43B91C99DB8100280630 /* Shared */,
 				5902393A1C99CD980075CE79 /* PeopleHere */,
@@ -98,6 +102,15 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		ED8F53971EA9B1250030BAE3 /* Utilities  */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */,
+				ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */,
+			);
+			name = "Utilities ";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +142,7 @@
 				TargetAttributes = {
 					446794961C2B1B6600642940 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -171,6 +185,7 @@
 			files = (
 				59179A061C99DCAD00464D6D /* AppDelegate.m in Sources */,
 				59179A081C99DCAD00464D6D /* main.m in Sources */,
+				ED8F539A1EA9B14A0030BAE3 /* FSJSON.swift in Sources */,
 				21CA71931C9AF42300783F31 /* FSQPeopleHereTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,10 +297,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Shared/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foursquare.UnratedVenueToggle;
 				PRODUCT_NAME = "ios-interview";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-interview-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -294,10 +313,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Shared/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foursquare.UnratedVenueToggle;
 				PRODUCT_NAME = "ios-interview";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-interview-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
