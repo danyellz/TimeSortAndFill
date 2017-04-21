@@ -21,8 +21,8 @@ extension FSAPI {
         
         static func getVenueFromJSON() -> FSVenue? {
             
-            /* Parallel assignment of attributes - checking if json, data, and the dictionary are valid
-            before returning a dictionary for FSVenue. */
+            // Parallel assignment of attributes - check if json, data, and the dictionary are valid.
+            //before returning a dictionary for FSVenue.
             guard let json = Bundle.main.url(forResource: "people-here", withExtension: "json"),
             let data = try? Data(contentsOf: json),
             let dictionary = FSJSON.deserializeJSON(data: data) else {
@@ -35,9 +35,11 @@ extension FSAPI {
     }
 }
 
-/* MARK: - Objective-C support for Swift Venue methods.
- This allows for bridging Obj-C and Swift 3.0 usage throughout the application
- without converting prior Obj-C code. */
+/* 
+ MARK: - Objective-C support for Swift Venue methods.
+ This allows for bridging Swift 3.0 usage
+ without converting Obj-C.
+ */
 final class FSVenueToObjC: NSObject {
     
     static func loadVenue() -> FSVenue? {

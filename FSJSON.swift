@@ -10,10 +10,13 @@ import Foundation
 
 class FSJSON {
     
-//    MARK: - JSON deserialization
-//    Method to check whether JSON is capable of being serialized into a dictionary
-//    
-//    Input will be a set of data in the form of JSON, the output will be a JSON deserialized into a dictionary
+    /*
+     MARK: - JSON deserialization
+     
+     Method to check whether JSON is capable of being serialized into a dictionary.
+     - Input will be a set of data in the form of JSON
+     - Output will be a JSON deserialized into a dictionary.
+     */
     static func deserializeJSON(data: Data?) -> [String : Any]? {
         guard let data = data, data.count != 0 else {
             return nil

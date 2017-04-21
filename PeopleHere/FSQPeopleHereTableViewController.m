@@ -44,7 +44,6 @@
 
 -(void)getData {
     self.venue = [FSVenueToObjC loadVenue];
-    printf("%s", self.venue);
 }
 
 #pragma mark - Table view data source

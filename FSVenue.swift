@@ -31,10 +31,6 @@ final class FSVenue: NSObject {
         //Create array of visitor objects
         let dictionaryOfVisitors = dictionaryForVenue["visitors"] as! [[String:Any]]
         visitors = FSVenueVisitor.arrayFrom(dictionary: dictionaryOfVisitors)
-        
-        print(visitors)
-        
-        
     }
     
     let id: String
