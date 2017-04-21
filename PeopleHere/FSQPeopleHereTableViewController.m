@@ -11,7 +11,6 @@
 
 @interface FSQPeopleHereTableViewController ()
 @property (nonatomic) FSVenue *venue;
-
 @end
 
 @implementation FSQPeopleHereTableViewController
@@ -26,6 +25,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self getData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +43,8 @@
 #pragma mark - Get data for controller
 
 -(void)getData {
-    
+    self.venue = [FSVenueToObjC loadVenue];
+    printf("%s", self.venue);
 }
 
 #pragma mark - Table view data source
