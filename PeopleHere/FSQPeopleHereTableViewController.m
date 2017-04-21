@@ -37,7 +37,10 @@
 #pragma mark - Setup view
 
 -(void)setupView {
-    
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 50.f;
+    self.tableView.allowsSelection = false;
+//    [self.tableView registerClass:<#(nullable Class)#> forCellReuseIdentifier:<#(nonnull NSString *)#>]
 }
 
 #pragma mark - Get data for controller
