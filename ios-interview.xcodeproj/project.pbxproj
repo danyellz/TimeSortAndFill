@@ -21,6 +21,7 @@
 		ED8F53A71EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A61EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift */; };
 		ED8F53A91EAA73A70030BAE3 /* FSVenueVisitorGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A81EAA73A70030BAE3 /* FSVenueVisitorGap.swift */; };
 		ED8F53AB1EAA7B540030BAE3 /* FSTimeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */; };
+		ED8F53AE1EAA81350030BAE3 /* FS + DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53AD1EAA81350030BAE3 /* FS + DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		ED8F53A61EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPeopleHereTableViewCell.swift; sourceTree = "<group>"; };
 		ED8F53A81EAA73A70030BAE3 /* FSVenueVisitorGap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenueVisitorGap.swift; sourceTree = "<group>"; };
 		ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTimeUtility.swift; sourceTree = "<group>"; };
+		ED8F53AD1EAA81350030BAE3 /* FS + DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FS + DateFormatter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		4467948E1C2B1B6500642940 = {
 			isa = PBXGroup;
 			children = (
+				ED8F53AC1EAA80EF0030BAE3 /* Extensions */,
 				ED8F53A01EA9B58B0030BAE3 /* DataModels */,
 				ED8F539B1EA9B3990030BAE3 /* NetworkSim */,
 				ED8F53971EA9B1250030BAE3 /* Utilities  */,
@@ -143,6 +146,14 @@
 				ED8F53A81EAA73A70030BAE3 /* FSVenueVisitorGap.swift */,
 			);
 			name = DataModels;
+			sourceTree = "<group>";
+		};
+		ED8F53AC1EAA80EF0030BAE3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F53AD1EAA81350030BAE3 /* FS + DateFormatter.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 				ED8F53A21EA9B9000030BAE3 /* FSVenueVisitor.swift in Sources */,
 				59179A081C99DCAD00464D6D /* main.m in Sources */,
 				ED8F539F1EA9B5860030BAE3 /* FSVenue.swift in Sources */,
+				ED8F53AE1EAA81350030BAE3 /* FS + DateFormatter.swift in Sources */,
 				ED8F539D1EA9B3CE0030BAE3 /* FSAPI+Venues.swift in Sources */,
 				ED8F53A71EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift in Sources */,
 				ED8F53A91EAA73A70030BAE3 /* FSVenueVisitorGap.swift in Sources */,

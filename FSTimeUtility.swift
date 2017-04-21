@@ -46,8 +46,8 @@ fileprivate extension FSTimeUtility {
             return today.date(from: dateComponents)
         }()
         
-//        static let timeFormatter: DateFormatter = {
-//           return
-//        }()
+        static let timeFormatter: DateFormatter = {
+           return DateFormatter.fs_formatterFrom(string: "H:mm") //Formats Date string without a leading zero (07:30)->(7:30)
+        }()
     }
 }
