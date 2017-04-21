@@ -38,14 +38,23 @@ final class FSVenue: NSObject {
     let open: TimeInterval
     let close: TimeInterval
     let visitors: [FSVenueVisitor]?
+    
+    lazy var visitorsDuringOpenHours: [FSVenueVisitor] = { [unowned self] in
+        print(self.sortVenueVisitorsByTimeAndFillGaps())
+        return self.sortVenueVisitorsByTimeAndFillGaps()
+    }()
 }
 
 // MARK: - Private API for sorting
 
 fileprivate extension FSVenue {
 
+    // MARK: - Algorithms for sort visitors for tableview usage, and represent gaps or 'downtime'.
+    
     func sortVenueVisitorsByTimeAndFillGaps() -> [FSVenueVisitor] {
         var venueVisitors = visitors!
+        let fillerVisitor = FSVenueVisitorGap(arriveTime: 60, leaveTime: 60)!
+        venueVisitors.append(fillerVisitor)
         return venueVisitors
     }
 }
