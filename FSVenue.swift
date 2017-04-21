@@ -27,9 +27,11 @@ final class FSVenue: NSObject {
         name = dictionaryForVenue["name"] as! String
         open = dictionaryForVenue["openTime"] as! TimeInterval
         close = dictionaryForVenue["closeTime"] as! TimeInterval
-        let dictionaryOfVisitors = dictionaryForVenue["visitors"] as! [[String:Any]]
         
         //Create array of visitor objects
+        let dictionaryOfVisitors = dictionaryForVenue["visitors"] as! [[String:Any]]
+        visitors = FSVenueVisitor.arrayFrom(dictionary: dictionaryOfVisitors)
+        
         
     }
     
@@ -37,4 +39,5 @@ final class FSVenue: NSObject {
     let name: String
     let open: TimeInterval
     let close: TimeInterval
+    let visitors: [FSVenueVisitor]?
 }
