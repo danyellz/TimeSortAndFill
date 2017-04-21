@@ -17,6 +17,7 @@
 		ED8F539A1EA9B14A0030BAE3 /* FSJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */; };
 		ED8F539D1EA9B3CE0030BAE3 /* FSAPI+Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */; };
 		ED8F539F1EA9B5860030BAE3 /* FSVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */; };
+		ED8F53A21EA9B9000030BAE3 /* FSVenueVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A11EA9B9000030BAE3 /* FSVenueVisitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSJSON.swift; sourceTree = "<group>"; };
 		ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSAPI+Venues.swift"; sourceTree = "<group>"; };
 		ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenue.swift; sourceTree = "<group>"; };
+		ED8F53A11EA9B9000030BAE3 /* FSVenueVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenueVisitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */,
+				ED8F53A11EA9B9000030BAE3 /* FSVenueVisitor.swift */,
 			);
 			name = DataModels;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59179A061C99DCAD00464D6D /* AppDelegate.m in Sources */,
+				ED8F53A21EA9B9000030BAE3 /* FSVenueVisitor.swift in Sources */,
 				59179A081C99DCAD00464D6D /* main.m in Sources */,
 				ED8F539F1EA9B5860030BAE3 /* FSVenue.swift in Sources */,
 				ED8F539D1EA9B3CE0030BAE3 /* FSAPI+Venues.swift in Sources */,

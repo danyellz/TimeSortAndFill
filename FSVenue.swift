@@ -28,7 +28,9 @@ final class FSVenue: NSObject {
         open = dictionaryForVenue["openTime"] as! TimeInterval
         close = dictionaryForVenue["closeTime"] as! TimeInterval
         let dictionaryOfVisitors = dictionaryForVenue["visitors"] as! [[String:Any]]
+        
         //Create array of visitor objects
+        
     }
     
     let id: String
