@@ -7,12 +7,16 @@
 //
 
 #import "FSQPeopleHereTableViewController.h"
+#import "ios_interview-Swift.h"
 
 @interface FSQPeopleHereTableViewController ()
+@property (nonatomic) FSVenue *venue;
 
 @end
 
 @implementation FSQPeopleHereTableViewController
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +31,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Setup view
+
+-(void)setupView {
+    
+}
+
+#pragma mark - Get data for controller
+
+-(void)getData {
+    
 }
 
 #pragma mark - Table view data source

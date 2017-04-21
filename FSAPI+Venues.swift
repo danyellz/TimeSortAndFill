@@ -8,17 +8,40 @@
 
 import Foundation
 
-//Spoofed API base to share JSON deserializer throughout the application
+//API struct to share JSON deserializer/other conveniences throughout the application
 struct FSAPI {}
 
 extension FSAPI {
     
-    //Creates venue object from locally store JSON data file
-    //
-    // - If JSON is readable into a venue object, returns an optional FSVenue object
+    /* Creates venue object from locally store JSON data file
+     
+     - If JSON is readable into a venue object, returns an optional FSVenue object.
+    */
     struct Venues {
         
-//        static func getVenueFromJSON() -> FSVenue? {}
+        static func getVenueFromJSON() -> FSVenue? {
+            
+            /* Parallel assignment of attributes - checking if json, data, and the dictionary are valid
+            before returning a dictionary for FSVenue. */
+            guard let json = Bundle.main.url(forResource: "people-here", withExtension: "json"),
+            let data = try? Data(contentsOf: json),
+            let dictionary = FSJSON.deserializeJSON(data: data) else {
+                    debugPrint("Error parsing JSON")
+                    return nil
+            }
+            
+            return FSVenue(dictionary: dictionary)
+        }
+    }
+}
+
+/* MARK: - Objective-C support for Swift Venue methods.
+ This allows for bridging Obj-C and Swift 3.0 usage throughout the application
+ without converting prior Obj-C code. */
+final class FSVenueToObjC: NSObject {
+    
+    static func loadVenue() -> FSVenue? {
+        return FSAPI.Venues.getVenueFromJSON()
     }
 }
 
