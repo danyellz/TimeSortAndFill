@@ -17,7 +17,10 @@ struct FSTimeUtility {
     // - Output should be a time string in 24 hour time
     
     static func timeStringFor(secondsSinceMidnight: TimeInterval) -> String? {
-        return ""
+        guard let date = dateFrom(secondsSinceMidnight: secondsSinceMidnight) else {
+            return nil
+        }
+        return DateCache.timeFormatter.string(from: date)
     }
 }
 

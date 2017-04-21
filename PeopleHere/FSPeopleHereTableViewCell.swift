@@ -25,6 +25,12 @@ final class FSPeopleHereTableViewCell: UITableViewCell {
         fatalError("Use default initialization!")
     }
     
+    // MARK: - override
+    
+    override func prepareForReuse() {
+        resetCell()
+    }
+    
     // MARK: - Properties
     
     var venueVisitor: FSVenueVisitor? {
@@ -38,6 +44,8 @@ final class FSPeopleHereTableViewCell: UITableViewCell {
 
 fileprivate extension FSPeopleHereTableViewCell {
     
+    // MARK: - Setup cell
+    
     func configureCell(visitor: FSVenueVisitor?) {
         guard let venueVisitor = visitor else {
             resetCell()
@@ -47,9 +55,18 @@ fileprivate extension FSPeopleHereTableViewCell {
         textLabel?.text = venueVisitor.name
         
         // MARK: - Format visitor visiting time string (9:00 - 12:00)
+        let unknownVenue = FSVenueLocalizations.Unknown
+        let arriveTimeString = FSTimeUtility.timeStringFor(secondsSinceMidnight: venueVisitor.arriveTime) ?? unknownVenue
+        let leaveTimeString = FSTimeUtility.timeStringFor(secondsSinceMidnight: venueVisitor.leaveTime) ?? unknownVenue
+        detailTextLabel?.text = String(format: "%@ - %@", arriveTimeString, leaveTimeString)
         
-        
+        //Bool to check whether cell data configuration is for 'gap' data or legitimate visitor data
+        let isEnabled = (venueVisitor is FSVenueVisitorGap) == false
+        textLabel?.isEnabled = isEnabled
+        detailTextLabel?.isEnabled = isEnabled
+        isUserInteractionEnabled = isEnabled
     }
+    
     
     func resetCell() {
         isUserInteractionEnabled = true

@@ -10,7 +10,7 @@ import Foundation
 
 // NOTE: - This class is subclassed from the 'FSVenueVisitor' and is used to indicate 'gaps' between
 //actual visitors - will be shown as greyed out as indicated in the screenshot
-final class VenueVisitorGap: FSVenueVisitor {
+final class FSVenueVisitorGap: FSVenueVisitor {
     
     // MARK: - Initialization
     
