@@ -29,12 +29,12 @@ final class FSPeopleHereTableViewCell: UITableViewCell {
     
     var venueVisitor: FSVenueVisitor? {
         didSet {
-            
+            configureCell(visitor: venueVisitor)
         }
     }
 }
 
-// MARK: - Private API for cell config
+// MARK: - Private API for cell configuration
 
 fileprivate extension FSPeopleHereTableViewCell {
     

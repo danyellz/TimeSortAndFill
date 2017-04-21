@@ -20,6 +20,7 @@
 		ED8F53A21EA9B9000030BAE3 /* FSVenueVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A11EA9B9000030BAE3 /* FSVenueVisitor.swift */; };
 		ED8F53A71EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A61EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift */; };
 		ED8F53A91EAA73A70030BAE3 /* FSVenueVisitorGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A81EAA73A70030BAE3 /* FSVenueVisitorGap.swift */; };
+		ED8F53AB1EAA7B540030BAE3 /* FSTimeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		ED8F53A11EA9B9000030BAE3 /* FSVenueVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenueVisitor.swift; sourceTree = "<group>"; };
 		ED8F53A61EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPeopleHereTableViewCell.swift; sourceTree = "<group>"; };
 		ED8F53A81EAA73A70030BAE3 /* FSVenueVisitorGap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenueVisitorGap.swift; sourceTree = "<group>"; };
+		ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTimeUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */,
 				ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */,
+				ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */,
 			);
 			name = "Utilities ";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8F53AB1EAA7B540030BAE3 /* FSTimeUtility.swift in Sources */,
 				59179A061C99DCAD00464D6D /* AppDelegate.m in Sources */,
 				ED8F53A21EA9B9000030BAE3 /* FSVenueVisitor.swift in Sources */,
 				59179A081C99DCAD00464D6D /* main.m in Sources */,
