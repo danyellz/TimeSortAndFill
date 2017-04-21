@@ -18,7 +18,7 @@ extension FSAPI {
     // - If JSON is readable into a venue object, returns an optional FSVenue object
     struct Venues {
         
-//        static func getVenueFromJSON() -> Venue? {}
+//        static func getVenueFromJSON() -> FSVenue? {}
     }
 }
 

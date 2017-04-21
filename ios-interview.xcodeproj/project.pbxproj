@@ -16,6 +16,7 @@
 		59179A131C99DCBF00464D6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59179A0F1C99DCBF00464D6D /* Main.storyboard */; };
 		ED8F539A1EA9B14A0030BAE3 /* FSJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */; };
 		ED8F539D1EA9B3CE0030BAE3 /* FSAPI+Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */; };
+		ED8F539F1EA9B5860030BAE3 /* FSVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-interview-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSJSON.swift; sourceTree = "<group>"; };
 		ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSAPI+Venues.swift"; sourceTree = "<group>"; };
+		ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		4467948E1C2B1B6500642940 = {
 			isa = PBXGroup;
 			children = (
+				ED8F53A01EA9B58B0030BAE3 /* DataModels */,
 				ED8F539B1EA9B3990030BAE3 /* NetworkSim */,
 				ED8F53971EA9B1250030BAE3 /* Utilities  */,
 				2167001F1CA1E7A00019E0D7 /* Data */,
@@ -120,6 +123,14 @@
 				ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */,
 			);
 			name = NetworkSim;
+			sourceTree = "<group>";
+		};
+		ED8F53A01EA9B58B0030BAE3 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */,
+			);
+			name = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 			files = (
 				59179A061C99DCAD00464D6D /* AppDelegate.m in Sources */,
 				59179A081C99DCAD00464D6D /* main.m in Sources */,
+				ED8F539F1EA9B5860030BAE3 /* FSVenue.swift in Sources */,
 				ED8F539D1EA9B3CE0030BAE3 /* FSAPI+Venues.swift in Sources */,
 				ED8F539A1EA9B14A0030BAE3 /* FSJSON.swift in Sources */,
 				21CA71931C9AF42300783F31 /* FSQPeopleHereTableViewController.m in Sources */,
