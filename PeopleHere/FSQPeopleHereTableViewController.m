@@ -40,7 +40,7 @@
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 50.f;
     self.tableView.allowsSelection = false;
-//    [self.tableView registerClass:<#(nullable Class)#> forCellReuseIdentifier:<#(nonnull NSString *)#>]
+    [self.tableView registerClass:[FSPeopleHereTableViewCell class] forCellReuseIdentifier:FSPeopleHereTableViewCell.cellReuseId];
 }
 
 #pragma mark - Get data for controller

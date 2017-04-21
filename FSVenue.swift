@@ -39,3 +39,13 @@ final class FSVenue: NSObject {
     let close: TimeInterval
     let visitors: [FSVenueVisitor]?
 }
+
+// MARK: - Private API sorting by time
+
+fileprivate extension FSVenue {
+
+    func sortVenueVisitorsByTimeAndFillGaps() -> [FSVenueVisitor] {
+        var venueVisitors = visitors!
+        return venueVisitors
+    }
+}
