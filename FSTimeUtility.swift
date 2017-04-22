@@ -10,7 +10,6 @@ import Foundation
 
 // MARK: - Time utility API
 struct FSTimeUtility {
-    
     //Generate a time string (e.g. 18:31) for the seconds from midnight
     
     // - Input should be the seconds since midnight
@@ -20,6 +19,8 @@ struct FSTimeUtility {
         guard let date = dateFrom(secondsSinceMidnight: secondsSinceMidnight) else {
             return nil
         }
+        
+        print(date)
         return DateCache.timeFormatter.string(from: date)
     }
 }

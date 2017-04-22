@@ -23,6 +23,7 @@
 		ED8F53AB1EAA7B540030BAE3 /* FSTimeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */; };
 		ED8F53AE1EAA81350030BAE3 /* FS + DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53AD1EAA81350030BAE3 /* FS + DateFormatter.swift */; };
 		ED8F53B11EAA85960030BAE3 /* FSVenueLocalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53B01EAA85960030BAE3 /* FSVenueLocalizations.swift */; };
+		ED8F53B31EAAA6D00030BAE3 /* FSTimeIntervalUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53B21EAAA6D00030BAE3 /* FSTimeIntervalUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTimeUtility.swift; sourceTree = "<group>"; };
 		ED8F53AD1EAA81350030BAE3 /* FS + DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FS + DateFormatter.swift"; sourceTree = "<group>"; };
 		ED8F53B01EAA85960030BAE3 /* FSVenueLocalizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenueLocalizations.swift; sourceTree = "<group>"; };
+		ED8F53B21EAAA6D00030BAE3 /* FSTimeIntervalUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTimeIntervalUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */,
 				ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */,
 				ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */,
+				ED8F53B21EAAA6D00030BAE3 /* FSTimeIntervalUtility.swift */,
 			);
 			name = "Utilities ";
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				ED8F539D1EA9B3CE0030BAE3 /* FSAPI+Venues.swift in Sources */,
 				ED8F53A71EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift in Sources */,
 				ED8F53A91EAA73A70030BAE3 /* FSVenueVisitorGap.swift in Sources */,
+				ED8F53B31EAAA6D00030BAE3 /* FSTimeIntervalUtility.swift in Sources */,
 				ED8F53B11EAA85960030BAE3 /* FSVenueLocalizations.swift in Sources */,
 				ED8F539A1EA9B14A0030BAE3 /* FSJSON.swift in Sources */,
 				21CA71931C9AF42300783F31 /* FSQPeopleHereTableViewController.m in Sources */,

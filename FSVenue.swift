@@ -37,12 +37,11 @@ final class FSVenue: NSObject {
     let name: String
     let open: TimeInterval
     let close: TimeInterval
-    let visitors: [FSVenueVisitor]?
+    var visitors: [FSVenueVisitor]?
     
     lazy var visitorsDuringOpenHours: [FSVenueVisitor] = { [unowned self] in
-        print(self.sortVenueVisitorsByTimeAndFillGaps())
         return self.sortVenueVisitorsByTimeAndFillGaps()
-    }()
+    }()!
 }
 
 // MARK: - Private API for sorting
@@ -51,10 +50,37 @@ fileprivate extension FSVenue {
 
     // MARK: - Algorithms for sort visitors for tableview usage, and represent gaps or 'downtime'.
     
-    func sortVenueVisitorsByTimeAndFillGaps() -> [FSVenueVisitor] {
-        var venueVisitors = visitors!
-        let fillerVisitor = FSVenueVisitorGap(arriveTime: 60, leaveTime: 60)!
-        venueVisitors.append(fillerVisitor)
+    func sortVenueVisitorsByTimeAndFillGaps() -> [FSVenueVisitor]? {
+        
+        /*
+         An algorithm to sort visitors and fill in gaps to show
+         venue owners where they could improve foot traffic
+         
+         What we know:
+         -------------
+         - Time (opening hours / visits) is given as seconds from midnight and converted into 24hr time
+         - People are sorted by their entry time and can overlap (so we sort by entry and then by the latter of exit times)
+         - Gaps are inserted based on lack of entry time or immediately after someone exits until the next person or closing
+         */
+        
+        //Sorted by arrivalTime
+        var venueVisitors = visitors?.sorted(by: {$0.arriveTime < $1.arriveTime})
+        
+        // NOTE: - On^2 solutionm
+        for index in 0..<(venueVisitors?.count)! - 1 {
+            guard let thisVisitor = venueVisitors?[index], let nextVisitor = venueVisitors?[index + 1] else {
+                return nil
+            }
+
+            //Skip if theres overlap between current and next visitor's start and end times
+            if (thisVisitor.leaveTime.isLess(than: nextVisitor.leaveTime)) && (thisVisitor.leaveTime.isLess(than: nextVisitor.arriveTime)) {
+                let visitorLeave = thisVisitor.leaveTime
+                let nextVisitorArrival = nextVisitor.arriveTime
+                
+                let fillerVisitor = FSVenueVisitorGap(arriveTime: visitorLeave, leaveTime: nextVisitorArrival)!
+                venueVisitors?.append(fillerVisitor)
+            }
+        }
         return venueVisitors
     }
 }

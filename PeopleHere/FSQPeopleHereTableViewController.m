@@ -29,13 +29,13 @@
     self.tableView.dataSource = nil;
 }
 
-#pragma mark - Setup view
+#pragma mark - Setup view/controller delegates
 
 -(void)setupView {
-    self.tableView.rowHeight = 50.f;
     self.tableView.dataSource = self;
-    self.tableView.allowsSelection = false;
     [self.tableView registerClass:[FSPeopleHereTableViewCell class] forCellReuseIdentifier:FSPeopleHereTableViewCell.cellReuseId];
+    self.tableView.rowHeight = 50.f;
+    self.tableView.allowsSelection = false;
 }
 
 #pragma mark - Get data for controller
