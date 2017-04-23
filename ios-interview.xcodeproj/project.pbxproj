@@ -37,7 +37,7 @@
 		59179A0B1C99DCBF00464D6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59179A0E1C99DCBF00464D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59179A101C99DCBF00464D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-interview-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ios-interview-Bridging-Header.h"; path = "../ios-interview-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSJSON.swift; sourceTree = "<group>"; };
 		ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSAPI+Venues.swift"; sourceTree = "<group>"; };
 		ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenue.swift; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 				59179A011C99DCAD00464D6D /* AppDelegate.h */,
 				59179A021C99DCAD00464D6D /* AppDelegate.m */,
 				59179A051C99DCAD00464D6D /* main.m */,
+				ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -127,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */,
-				ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */,
 				ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */,
 			);
 			name = "Utilities ";

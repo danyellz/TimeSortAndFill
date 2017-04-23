@@ -64,15 +64,23 @@ fileprivate extension FSVenue {
          */
 
         /*
-         NOTE: - Initially attempted to iterate through venueVisitor in ascending order, but this method doesn't account for
+         NOTE: 
+         
+         - Initially attempted to iterate through venueVisitor in ascending order, but this method doesn't account for
          overlapping throughout the collection, and requires an O(n^2) solution. However, this does prove to work when all
          arriveTimes/leaveTimes in the collection are in ascending order.
+         
+         - Building a collection of visitors sorted by arriveTime then leaveTime may cause lag if done with a large array
+         - Could be improved by sorting by breaking up operations such as sorted arrays
          */
         
         // MARK - Sorted arrays by: arrivalTime/leaveTime to later be combined into a collection
         guard var sortedArrivals = visitors?.sorted(by: {$0.arriveTime < $1.arriveTime}),
             var sortedLeaves = visitors?.sorted(by: {$0.leaveTime < $1.leaveTime}), //
-            var scheduleWithGaps = visitors?.sorted(by: {($0.arriveTime < $1.arriveTime)} ) else { return nil }
+            var scheduleWithGaps = visitors?.sorted(by: {($0.arriveTime < $1.arriveTime)} ) else {
+                
+            return nil
+        }
         
         // - Array of 'FSVenueVisitor' sorted start/end times
         var sortedByStartAndEnd = [FSVenueVisitor]()
@@ -81,12 +89,12 @@ fileprivate extension FSVenue {
         let firstGap = FSVenueVisitorGap(arriveTime: open, leaveTime: (scheduleWithGaps.first?.arriveTime)!)
         scheduleWithGaps.append(firstGap!)
         
-        // - Build the collection with sorted start/end times for simpler comparisons
+        // - Build the collection with sorted start/end ascending for simpler comparisons
         for index in 0..<(scheduleWithGaps.count) - 1 {
-            
-            // Creates a VenueVisitor object with arriveTime/leaveTime previously sorted in ascending order
-            let gapVisitor = FSVenueVisitorGap(arriveTime: (sortedArrivals[index].arriveTime), leaveTime: (sortedLeaves[index].leaveTime))
-            sortedByStartAndEnd.append(gapVisitor!)
+            if let visitor = FSVenueVisitorGap(arriveTime: (sortedArrivals[index].arriveTime), leaveTime: (sortedLeaves[index].leaveTime)) {
+                
+                sortedByStartAndEnd.append(visitor)
+            }
         }
         
         // - Gap between the last customers leaveTime and business close
@@ -94,9 +102,9 @@ fileprivate extension FSVenue {
         scheduleWithGaps.append(lastGap!)
     
         /* 
-         MARK: - Algorithm to iterate and find/fill 'gaps' in O(Log n) time:
+         MARK: - ALGORITHM to iterate and find/fill 'gaps' in O(Logn) time:
          
-         - Checks if [i - 1].leaveTime (visitor at current index) checkout is less than the following visitor's arrivalTime comparing TimeIntervals
+         - Checks if [i - 1].leaveTime (visitor at current index) checkout is less than the following visitor's arrivalTime comparing TimeInterval values
          - A leaveTime < the subsequent visitor's arrivalTime indicates a gap (e.g. Neil left "16:30" --gap-- Nathan arrived "17:00")
          - Since visitors are sorted by both arriveTime/leaveTime, we are able to find differences or 'gaps' in a single iteration
          */
@@ -110,8 +118,9 @@ fileprivate extension FSVenue {
                 }
             }
         }
-        // Sort the array of newly added 'gap' times in order of leaveTimes <= next index arriveTimes
         
+        // Sort the array of newly added 'gap' times in order of leaveTimes <= next index arriveTimes
+        //
         // - Makes filled gaps' arriveTime follow the prior visitor leaveTime
         return scheduleWithGaps.sorted(by: {$0.leaveTime <= $1.arriveTime})
     }
