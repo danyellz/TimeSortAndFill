@@ -32,6 +32,9 @@
 #pragma mark - Setup view/controller delegates
 
 -(void)setupView {
+    
+    self.title = @"Visitors";
+    
     self.tableView.dataSource = self;
     [self.tableView registerClass:[FSPeopleHereTableViewCell class] forCellReuseIdentifier:FSPeopleHereTableViewCell.cellReuseId];
     self.tableView.rowHeight = 50.f;
@@ -48,14 +51,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.venue.visitorsDuringOpenHours.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FSPeopleHereTableViewCell *cell = (FSPeopleHereTableViewCell *)[tableView dequeueReusableCellWithIdentifier:FSPeopleHereTableViewCell.cellReuseId forIndexPath:indexPath];
-
-    cell.venueVisitor = self.venue.visitorsDuringOpenHours[indexPath.row];
+    
+    cell.venueVisitor = self.venue.visitorsDuringOpenHours[indexPath.row]; // Instantiate cell with visitor data
     return cell;
 }
 

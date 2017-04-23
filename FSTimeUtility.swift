@@ -8,7 +8,8 @@
 
 import Foundation
 
-// MARK: - Time utility API
+// MARK: - Time utility API for converting TimeIntervals to Date objects, then readable fomatted strings.
+
 struct FSTimeUtility {
     //Generate a time string (e.g. 18:31) for the seconds from midnight
     
@@ -25,7 +26,8 @@ struct FSTimeUtility {
     }
 }
 
-// MARK: - Private API
+// MARK: - Private API for manipulating TimeIntervals into Date and getting Strings from Date
+
 fileprivate extension FSTimeUtility {
     
     //Generate a Date with an offset from midnight in order to form a time string

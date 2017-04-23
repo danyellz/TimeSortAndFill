@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FSQPeopleHereTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self setupRootViewController];
+    
     return YES;
+}
+
+- (void)setupRootViewController {
+    self.window = [UIWindow new];
+    FSQPeopleHereTableViewController *mainTableViewController = [[FSQPeopleHereTableViewController alloc] init];
+    UINavigationController *mainNavController = [[UINavigationController alloc] initWithRootViewController:mainTableViewController];
+    self.window.rootViewController = mainNavController;
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
