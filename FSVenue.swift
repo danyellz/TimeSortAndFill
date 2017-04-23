@@ -63,12 +63,10 @@ fileprivate extension FSVenue {
          - Gaps are inserted based on lack of entry time or immediately after someone exits until the next person or closing
          */
         
-        // MARK - Instatiate sorted arrays used within the algorithm
+        // MARK - Sorted arrays by: arrivalTime/leaveTime to later be combined into a collection
         guard var sortedFirst = visitors?.sorted(by: {$0.arriveTime < $1.arriveTime}),
             var sortedLast = visitors?.sorted(by: {$0.leaveTime < $1.leaveTime}),
-            var scheduleWithGaps = visitors?.sorted(by: {$0.arriveTime < $1.arriveTime}) else { return nil
-        
-        }
+            var scheduleWithGaps = visitors?.sorted(by: {($0.arriveTime, $0.leaveTime) < ($1.arriveTime, $1.leaveTime)}) else { return nil }
         
         // - Array of 'FSVenueVisitor' sorted start/end times
         var sortedByStartAndEnd = [FSVenueVisitor]()
@@ -77,27 +75,32 @@ fileprivate extension FSVenue {
         let firstGap = FSVenueVisitorGap(arriveTime: open, leaveTime: (scheduleWithGaps.first?.arriveTime)!)
         scheduleWithGaps.append(firstGap!)
         
-        // - Create array with sorted start/end times
+        // - Build the collection with sorted start/end times for simplified iteration
         for index in 0..<(sortedLast.count) {
             
             let gapVisitor = FSVenueVisitorGap(arriveTime: (sortedFirst[index].arriveTime), leaveTime: (sortedLast[index].leaveTime))
             sortedByStartAndEnd.append(gapVisitor!)
         }
         
+        // - Gap between the last customers leaveTime and business close
         let lastGap = FSVenueVisitorGap(arriveTime: (sortedByStartAndEnd.last?.leaveTime)!, leaveTime: close)
         scheduleWithGaps.append(lastGap!)
-        
+    
+        /* 
+         MARK: - Algorithm to iterate and find/fill 'gaps' in O(n)n time:
+         
+         - Checks if [i - 1].leaveTime (the current visitors checkout) is less than the following visitor's arrivalTime comparing TimeIntervals
+         - A leaveTime < the subsequent visitor's arrivalTime indicates a gap (e.g. Neil left "16:30" --gap-- Nathan arrived "17:00")
+         - Since visitors are sorted by both arriveTime and leaveTime, we are able to find differences in a single iteration
+         */
         for i in 1..<(sortedByStartAndEnd.count) {
-            
-            let beginningOfGap = sortedByStartAndEnd[i - 1].leaveTime
-            let endOfGap = sortedByStartAndEnd[i].arriveTime
-            
-            if (beginningOfGap < endOfGap) {
-                let overlapping = FSVenueVisitorGap(arriveTime: beginningOfGap, leaveTime: endOfGap)
-                scheduleWithGaps.append(overlapping!)
+            if (sortedByStartAndEnd[i - 1].leaveTime < sortedByStartAndEnd[i].arriveTime) {
+                if let gapSpace = FSVenueVisitorGap(arriveTime: sortedByStartAndEnd[i - 1].leaveTime, leaveTime: sortedByStartAndEnd[i].arriveTime) {
+                    scheduleWithGaps.append(gapSpace)
+                }
             }
         }
         
-        return scheduleWithGaps.sorted(by: {$0.arriveTime < $1.arriveTime})
+        return scheduleWithGaps.sorted(by: {$0.leaveTime <= $1.arriveTime})
     }
 }
