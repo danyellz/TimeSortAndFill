@@ -48,7 +48,7 @@ final class FSVenue: NSObject {
 
 fileprivate extension FSVenue {
 
-    // MARK: - Algorithms for sort visitors for tableview usage, and represent gaps or 'downtime'.
+    // MARK: - Algorithms to sort visitors for tableview usage, and represent gaps or 'downtime'
     
     func sortVenueVisitorsByTimeAndFillGaps() -> [FSVenueVisitor]? {
         
@@ -62,11 +62,17 @@ fileprivate extension FSVenue {
          - People are sorted by their entry time and can overlap (so we sort by entry and then by the latter of exit times)
          - Gaps are inserted based on lack of entry time or immediately after someone exits until the next person or closing
          */
+
+        /*
+         NOTE: - Initially attempted to iterate through venueVisitor in ascending order, but this method doesn't account for
+         overlapping throughout the collection, and requires an O(n^2) solution. However, this does prove to work when all
+         arriveTimes/leaveTimes in the collection are in ascending order.
+         */
         
         // MARK - Sorted arrays by: arrivalTime/leaveTime to later be combined into a collection
-        guard var sortedArrivals = visitors?.sorted(by: {$0.arriveTime < $1.arriveTime}), //Sorted by arrival
-            var sortedLeaves = visitors?.sorted(by: {$0.leaveTime < $1.leaveTime}), // Sorted by leave
-            var scheduleWithGaps = visitors?.sorted(by: {($0.arriveTime < $1.arriveTime)} ) else { return nil } //visitor
+        guard var sortedArrivals = visitors?.sorted(by: {$0.arriveTime < $1.arriveTime}),
+            var sortedLeaves = visitors?.sorted(by: {$0.leaveTime < $1.leaveTime}), //
+            var scheduleWithGaps = visitors?.sorted(by: {($0.arriveTime < $1.arriveTime)} ) else { return nil }
         
         // - Array of 'FSVenueVisitor' sorted start/end times
         var sortedByStartAndEnd = [FSVenueVisitor]()
@@ -100,7 +106,8 @@ fileprivate extension FSVenue {
             // - Append the 'gap' object if the current leaveTime < the subsequent indexes arriveTime
             if (sortedByStartAndEnd[i - 1].leaveTime < sortedByStartAndEnd[i].arriveTime) {
                 if let gapSpace = FSVenueVisitorGap(arriveTime: sortedByStartAndEnd[i - 1].leaveTime,
-                                                    leaveTime: sortedByStartAndEnd[i].arriveTime) { scheduleWithGaps.append(gapSpace) }
+                                                    leaveTime: sortedByStartAndEnd[i].arriveTime) { scheduleWithGaps.append(gapSpace)
+                }
             }
         }
         // Sort the array of newly added 'gap' times in order of leaveTimes <= next index arriveTimes

@@ -21,11 +21,12 @@ class FSVenueVisitor : NSObject {
     }
     
     // MARK: - Initialization convenience methods
+    
     static func arrayFrom(dictionary: [[String : Any]]?) -> [FSVenueVisitor]? {
         guard let dictionary = dictionary else {
             return nil
         }
-        return dictionary.flatMap({ FSVenueVisitor(dictionary: $0) })
+        return dictionary.flatMap({ FSVenueVisitor(dictionary: $0) }) //Convert dictionary into [FSVenueVisitor]
     }
     
     let id: String
