@@ -21,7 +21,6 @@ struct FSTimeUtility {
             return nil
         }
         
-        print(date)
         return DateCache.timeFormatter.string(from: date)
     }
 }
