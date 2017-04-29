@@ -14,6 +14,15 @@
 		59179A111C99DCBF00464D6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59179A0B1C99DCBF00464D6D /* Assets.xcassets */; };
 		59179A121C99DCBF00464D6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59179A0D1C99DCBF00464D6D /* LaunchScreen.storyboard */; };
 		59179A131C99DCBF00464D6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59179A0F1C99DCBF00464D6D /* Main.storyboard */; };
+		ED8F539A1EA9B14A0030BAE3 /* FSJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */; };
+		ED8F539D1EA9B3CE0030BAE3 /* FSAPI+Venues.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */; };
+		ED8F539F1EA9B5860030BAE3 /* FSVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */; };
+		ED8F53A21EA9B9000030BAE3 /* FSVenueVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A11EA9B9000030BAE3 /* FSVenueVisitor.swift */; };
+		ED8F53A71EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A61EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift */; };
+		ED8F53A91EAA73A70030BAE3 /* FSVenueVisitorGap.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53A81EAA73A70030BAE3 /* FSVenueVisitorGap.swift */; };
+		ED8F53AB1EAA7B540030BAE3 /* FSTimeUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */; };
+		ED8F53AE1EAA81350030BAE3 /* FS + DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53AD1EAA81350030BAE3 /* FS + DateFormatter.swift */; };
+		ED8F53B11EAA85960030BAE3 /* FSVenueLocalizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8F53B01EAA85960030BAE3 /* FSVenueLocalizations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,16 @@
 		59179A0B1C99DCBF00464D6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59179A0E1C99DCBF00464D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59179A101C99DCBF00464D6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ios-interview-Bridging-Header.h"; path = "../ios-interview-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSJSON.swift; sourceTree = "<group>"; };
+		ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FSAPI+Venues.swift"; sourceTree = "<group>"; };
+		ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenue.swift; sourceTree = "<group>"; };
+		ED8F53A11EA9B9000030BAE3 /* FSVenueVisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenueVisitor.swift; sourceTree = "<group>"; };
+		ED8F53A61EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPeopleHereTableViewCell.swift; sourceTree = "<group>"; };
+		ED8F53A81EAA73A70030BAE3 /* FSVenueVisitorGap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenueVisitorGap.swift; sourceTree = "<group>"; };
+		ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSTimeUtility.swift; sourceTree = "<group>"; };
+		ED8F53AD1EAA81350030BAE3 /* FS + DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FS + DateFormatter.swift"; sourceTree = "<group>"; };
+		ED8F53B01EAA85960030BAE3 /* FSVenueLocalizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVenueLocalizations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +71,11 @@
 		4467948E1C2B1B6500642940 = {
 			isa = PBXGroup;
 			children = (
+				ED8F53AF1EAA85720030BAE3 /* Localizations */,
+				ED8F53AC1EAA80EF0030BAE3 /* Extensions */,
+				ED8F53A01EA9B58B0030BAE3 /* DataModels */,
+				ED8F539B1EA9B3990030BAE3 /* NetworkSim */,
+				ED8F53971EA9B1250030BAE3 /* Utilities  */,
 				2167001F1CA1E7A00019E0D7 /* Data */,
 				590D43B91C99DB8100280630 /* Shared */,
 				5902393A1C99CD980075CE79 /* PeopleHere */,
@@ -72,6 +96,7 @@
 			children = (
 				21CA71911C9AF42300783F31 /* FSQPeopleHereTableViewController.h */,
 				21CA71921C9AF42300783F31 /* FSQPeopleHereTableViewController.m */,
+				ED8F53A61EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift */,
 			);
 			path = PeopleHere;
 			sourceTree = SOURCE_ROOT;
@@ -85,6 +110,7 @@
 				59179A011C99DCAD00464D6D /* AppDelegate.h */,
 				59179A021C99DCAD00464D6D /* AppDelegate.m */,
 				59179A051C99DCAD00464D6D /* main.m */,
+				ED8F53981EA9B14A0030BAE3 /* ios-interview-Bridging-Header.h */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -96,6 +122,49 @@
 				59179A0F1C99DCBF00464D6D /* Main.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		ED8F53971EA9B1250030BAE3 /* Utilities  */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F53991EA9B14A0030BAE3 /* FSJSON.swift */,
+				ED8F53AA1EAA7B540030BAE3 /* FSTimeUtility.swift */,
+			);
+			name = "Utilities ";
+			sourceTree = "<group>";
+		};
+		ED8F539B1EA9B3990030BAE3 /* NetworkSim */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F539C1EA9B3CE0030BAE3 /* FSAPI+Venues.swift */,
+			);
+			name = NetworkSim;
+			sourceTree = "<group>";
+		};
+		ED8F53A01EA9B58B0030BAE3 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F539E1EA9B5860030BAE3 /* FSVenue.swift */,
+				ED8F53A11EA9B9000030BAE3 /* FSVenueVisitor.swift */,
+				ED8F53A81EAA73A70030BAE3 /* FSVenueVisitorGap.swift */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		ED8F53AC1EAA80EF0030BAE3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F53AD1EAA81350030BAE3 /* FS + DateFormatter.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		ED8F53AF1EAA85720030BAE3 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				ED8F53B01EAA85960030BAE3 /* FSVenueLocalizations.swift */,
+			);
+			name = Localizations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +198,7 @@
 				TargetAttributes = {
 					446794961C2B1B6600642940 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -169,8 +239,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8F53AB1EAA7B540030BAE3 /* FSTimeUtility.swift in Sources */,
 				59179A061C99DCAD00464D6D /* AppDelegate.m in Sources */,
+				ED8F53A21EA9B9000030BAE3 /* FSVenueVisitor.swift in Sources */,
 				59179A081C99DCAD00464D6D /* main.m in Sources */,
+				ED8F539F1EA9B5860030BAE3 /* FSVenue.swift in Sources */,
+				ED8F53AE1EAA81350030BAE3 /* FS + DateFormatter.swift in Sources */,
+				ED8F539D1EA9B3CE0030BAE3 /* FSAPI+Venues.swift in Sources */,
+				ED8F53A71EAA71400030BAE3 /* FSPeopleHereTableViewCell.swift in Sources */,
+				ED8F53A91EAA73A70030BAE3 /* FSVenueVisitorGap.swift in Sources */,
+				ED8F53B11EAA85960030BAE3 /* FSVenueLocalizations.swift in Sources */,
+				ED8F539A1EA9B14A0030BAE3 /* FSJSON.swift in Sources */,
 				21CA71931C9AF42300783F31 /* FSQPeopleHereTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,10 +361,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Shared/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foursquare.UnratedVenueToggle;
 				PRODUCT_NAME = "ios-interview";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-interview-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -294,10 +378,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Shared/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.foursquare.UnratedVenueToggle;
 				PRODUCT_NAME = "ios-interview";
+				SWIFT_OBJC_BRIDGING_HEADER = "ios-interview-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
