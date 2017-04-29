@@ -69,7 +69,7 @@ fileprivate extension FSVenue {
          - Building a collection of visitors sorted by arriveTime then leaveTime may cause lag if done with a large array
          */
         guard var scheduleWithGaps = visitors?.sorted(by: {($0.arriveTime < $1.arriveTime)} ) else { return nil }
-        guard var sortedByArriveAndLeave = collectionOfVisitorsWithGaps() else { return nil }
+        guard var sortedByArriveAndLeave = visitorsSortedAscending() else { return nil }
         
         if let firstGap = FSVenueVisitorGap(arriveTime: open, leaveTime: (scheduleWithGaps.first?.arriveTime)!),
            let lastGap = FSVenueVisitorGap(arriveTime: (sortedByArriveAndLeave.last?.leaveTime)!, leaveTime: close) {
@@ -87,25 +87,23 @@ fileprivate extension FSVenue {
          */
         
         for i in 1..<(sortedByArriveAndLeave.count) {
-            
             if (sortedByArriveAndLeave[i - 1].leaveTime < sortedByArriveAndLeave[i].arriveTime) {
                 
                 let leaveTime = sortedByArriveAndLeave[i - 1].leaveTime
                 let arriveTime = sortedByArriveAndLeave[i].arriveTime
                 
-                if let gapSpace = FSVenueVisitorGap(arriveTime: leaveTime, leaveTime: arriveTime) {
-                    scheduleWithGaps.append(gapSpace)
-                }
+                let gapSpace = FSVenueVisitorGap(arriveTime: leaveTime, leaveTime: arriveTime)
+                scheduleWithGaps.append(gapSpace!)
             }
         }
-        
-        // Return collection sorted from leaveTime -> arriveTime
         return scheduleWithGaps.sorted(by: {$0.leaveTime <= $1.arriveTime})
     }
     
-    // MARK: - Build a collection sorted by both arrivalTimes/leaveTimes ascending
-    
-    fileprivate func collectionOfVisitorsWithGaps() -> [FSVenueVisitor]? {
+    /**
+     MARK: - Build a collection sorted by
+     both arriveTimes/leaveTimes ascending
+     */
+    fileprivate func visitorsSortedAscending() -> [FSVenueVisitor]? {
         
         guard var sortedArrivals = visitors?.sorted(by: {$0.arriveTime < $1.arriveTime}),
               var sortedLeaves = visitors?.sorted(by: {$0.leaveTime < $1.leaveTime}) else { return nil }
